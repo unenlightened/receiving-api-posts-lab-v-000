@@ -14,7 +14,12 @@
   <%= f.submit "submit" %>
 <% end %>
 
-<h2 id="postName"></h2>
+<div id="productResult">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <p id="productInventory"></p>
+</div>
 params.require(:product).permit(:name, :description, :inventory, :price)
 
 <script type="text/javascript" charset="utf-8">
@@ -24,7 +29,7 @@ params.require(:product).permit(:name, :description, :inventory, :price)
       var values = $(this).serialize();
       var posting = $.post('/products', values);
       posting.done(function(post) {
-        
+
       });
     });
   });
