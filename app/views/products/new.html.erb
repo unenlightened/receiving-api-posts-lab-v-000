@@ -18,7 +18,11 @@
   $(function() {
     $('form').submit(function(event) {
       event.preventDefault();
-      alert("whee")
+      var values = $(this).serialize();
+      var posting = $.post('/products', values);
+      posting.done(function(post) {
+        
+      });
     });
   });
 
